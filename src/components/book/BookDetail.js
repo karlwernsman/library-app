@@ -3,7 +3,7 @@ import { useBookDetail } from '../../hooks/useBookDetail';
 import { Link, useParams } from 'react-router-dom';
 
 function BookDetail() {
-  const { id } = useParams(); // TODO: Use id from route
+  const id = useParams(); // TODO: Use id from route
   const { book, loading, error } = useBookDetail(id);
 
   if (error)
@@ -17,7 +17,7 @@ function BookDetail() {
 
   return (
     <>
-      <Link to="/dogs">Back to Catalog</Link>
+      <Link to="/books">Back to Catalog</Link>
       <Book book={book} showDetail />
     </>
   );
